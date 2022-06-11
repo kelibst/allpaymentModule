@@ -4,7 +4,9 @@
   "description": "A nodejs payment module for all the available payment systems.",
   "main": "src/index.js",
   "scripts": {
-    "dev": "node src/index.js"
+    "build": "tsc",
+    "dev": "node dist/index.js",
+    "publish": "npm publish --access public"
   },
   "repository": {
     "type": "git",
@@ -22,5 +24,14 @@
   "bugs": {
     "url": "https://github.com/kelibst/allpaymentModule/issues"
   },
-  "homepage": "https://github.com/kelibst/allpaymentModule#readme"
+  "homepage": "https://github.com/kelibst/allpaymentModule#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "eslint": "^8.17.0",
+    "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "@types/node": "^17.0.42"
+  }
 }
