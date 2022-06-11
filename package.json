@@ -1,0 +1,26 @@
+{
+  "name": "@kelibst/allpaymentmodule",
+  "version": "1.0.0",
+  "description": "A nodejs payment module for all the available payment systems.",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kelibst/allpaymentModule.git"
+  },
+  "keywords": [
+    "stripe",
+    "paypal",
+    "momo",
+    "payment",
+    "module"
+  ],
+  "author": "kelibst @agymanjp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kelibst/allpaymentModule/issues"
+  },
+  "homepage": "https://github.com/kelibst/allpaymentModule#readme"
+}
