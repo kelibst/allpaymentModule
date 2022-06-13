@@ -2,7 +2,7 @@
   "name": "@kelibst/allpaymentmodule",
   "version": "1.0.0",
   "description": "A nodejs payment module for all the available payment systems.",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "dev": "node dist/index.js",

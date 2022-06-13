@@ -2,7 +2,7 @@
 
 A combined payment module for Paypal, Stripe and Momo
 
-Payment module specifications
+# Payment module specifications
 
 The idea is to make a NodeJs payment module that reduces the complexity of integrating various payment methods such as MTN Momo, Stripe, and Paypal into a Node and a ReactJs application.
 
