@@ -1,6 +1,15 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { Axios } from "axios";
-import React, { FormEventHandler, useState } from "react";
+import axios from "axios";
+import React, { useState } from "react";
+
+const CARD_OPTIONS = {
+  iconStyle: "solid",
+  style: {
+    base: {
+      iconColor: "black",
+    },
+  },
+};
 
 const PaymentForm = () => {
   const [success, setSuccess] = useState(false);
@@ -9,18 +18,19 @@ const PaymentForm = () => {
 
   const handleSubmitAsync = async (e) => {
     e.preventDefault();
-    const { error, paymentMethod } = await stripe?.createPaymentMethod({
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
       card: elements?.getElement(CardElement),
     });
 
-    if (error) {
+    if (!error) {
       try {
         const { id } = paymentMethod;
-        const response = await Axios.post("http://localhost:4000/payment", {
+        const response = await axios.post("http://localhost:4000/payment", {
           amount: 1000,
           id,
         });
+        console.log(response);
 
         if (response.data.success) {
           console.log("successful payment");
@@ -30,14 +40,14 @@ const PaymentForm = () => {
         console.log("Error: ", error);
       }
     } else {
-      console.log(error.message);
+      console.log(error);
     }
   };
 
   return (
     <>
       {!success ? (
-        <div>
+        <div className="formContainer">
           <form onSubmit={handleSubmitAsync}>
             <fieldset className="FormGroup">
               <div className="FormRow">

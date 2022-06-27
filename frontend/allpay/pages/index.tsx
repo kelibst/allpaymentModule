@@ -17,7 +17,10 @@ const Home: NextPage = () => {
         <div className={styles.grid}></div>
       </main> */}
 
-      <StripeContainer />
+      <div className="contents">
+        <h2 className="textHeader">Buy some house</h2>
+        <StripeContainer />
+      </div>
 
       <footer className={styles.footer}>
         <a
