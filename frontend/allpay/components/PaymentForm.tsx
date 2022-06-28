@@ -2,14 +2,14 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import axios from "axios";
 import React, { useState } from "react";
 
-const CARD_OPTIONS = {
-  iconStyle: "solid",
-  style: {
-    base: {
-      iconColor: "black",
-    },
-  },
-};
+// const CARD_OPTIONS = {
+//   iconStyle: "solid",
+//   style: {
+//     base: {
+//       iconColor: "black",
+//     },
+//   },
+// };
 
 const PaymentForm = () => {
   const [success, setSuccess] = useState(false);
@@ -24,13 +24,14 @@ const PaymentForm = () => {
     });
 
     if (!error) {
+      // console.log(paymentMethod);
       try {
         const { id } = paymentMethod;
         const response = await axios.post("http://localhost:4000/payment", {
           amount: 1000,
           id,
         });
-        console.log(response);
+        console.log("response", response);
 
         if (response.data.success) {
           console.log("successful payment");
@@ -51,7 +52,7 @@ const PaymentForm = () => {
           <form onSubmit={handleSubmitAsync}>
             <fieldset className="FormGroup">
               <div className="FormRow">
-                <CardElement options={CARD_OPTIONS} />
+                <CardElement />
               </div>
             </fieldset>
             <button>Pay</button>
